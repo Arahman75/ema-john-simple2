@@ -1,0 +1,21 @@
+.logo{
+    height: 70px;
+   
+}
+.header nav{
+    line-height: 45px;
+    background-color: black;
+}
+.header nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    margin-right: 20px;
+    padding: 5px;
+   
+}
+.header nav a:hover{
+    margin-top: 5px;
+    background-color: gray;
+   
+}
