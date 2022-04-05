@@ -2,6 +2,9 @@
     height: 70px;
    
 }
+.header{
+    text-align: center;
+}
 .header nav{
     line-height: 45px;
     background-color: black;
