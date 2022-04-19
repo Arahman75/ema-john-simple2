@@ -19,15 +19,14 @@ const Product = (props) => {
             <p><small>by: {seller}</small></p>
             <p>Price: {price}</p>
             <p><small>Only {stock} left in stock. Order soon...</small></p>
-          <Rating
-           initialRating={star}
-          
+         <Rating
+         initialRating={star}
           readonly
-        //   emptySymbol="fa fa-star-o fa-2x"
-        //   fullSymbol="fa fa-star fa-2x"
-          ></Rating>
+         >
+
+         </Rating>
           <br />
-          <br />
+      <br />
             <button 
             onClick={()=>props.handleAddToCart(props.product)}
             className='btn-regular'>{element} Add to Cart</button>

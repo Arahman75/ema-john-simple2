@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
@@ -37,7 +38,19 @@ useEffect(()=>{
 },[products])
 
     const handleAddToCart =(product)=>{
-       const newCart = [...cart, product];
+        const exists = cart.find(pd => pd.key === product.key);
+        let newCart = [];
+        if(exists){
+            const rest = cart.filter(pd => pd.key !== product.key);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest , product];
+
+        }
+        else{
+            product.key = 1;
+            newCart = [...cart, product]
+        }
+      console.log(newCart)
        setCart(newCart);
        //Save to local storage for now
        addToDb(product.key)
@@ -72,7 +85,9 @@ setDisplayProducts(matchedProducts)
                }
            </div>
            <div className='cart-container'>
-              <Cart cart={cart}></Cart>
+              <Cart cart={cart}>
+                  <Link to='/review'><button className='btn-regular'>Review your Order</button></Link>
+              </Cart>
            </div>
         </div>
         </>

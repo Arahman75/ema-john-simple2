@@ -3,6 +3,7 @@ import React from 'react';
 
 const Cart = (props) => {
     const {cart} = props;
+    console.log(props)
     // console.log(cart)
 
     //first step
@@ -35,6 +36,9 @@ const Cart = (props) => {
                <p>Shipping: {shipping}</p>
                <p>Tax: {tax.toFixed(2)}</p>
                <p>GrandTotal: {grandTotal.toFixed(2)}</p>
+               {
+                   props.children
+               }
         </div>
     );
 };
